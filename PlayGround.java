@@ -11,7 +11,12 @@ public class PlayGround {
 		test.append(22);
 		test.append('a');
 		test.append("hello world");
-		System.out.println(test.peek());
+		for (int x = 0; x < test.getLength(); x++) {
+			System.out.println(test.get(x));
+		}
+
+
+//		System.out.println(test.peek());
 //		test.printData();
 //		System.out.println(test.getLength());
 //		ObjectsList test2 = new ObjectsList("hello world",1,'d');

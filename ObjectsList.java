@@ -1,12 +1,16 @@
+import java.util.HashMap;
+
 public class ObjectsList {
 
-	class LinkedNode {
+	private static class LinkedNode {
 		Object data;
 		LinkedNode next, previous = null;
 
 		LinkedNode(Object data) { this.data = data; }
 	}
-	LinkedNode head, tail = null;
+
+	private LinkedNode head, tail = null;
+	private HashMap<Integer, LinkedNode> indices = new HashMap<>();
 	private int length = 0;
 
 	public void append(Object data) {
@@ -16,6 +20,7 @@ public class ObjectsList {
 			tail.next = new LinkedNode(data);
 			tail = tail.next;
 		}
+		indices.put(length,tail);
 		this.length++;
 	}
 
@@ -34,5 +39,8 @@ public class ObjectsList {
 		}
 	}
 
+	public Object get(Integer index) {
+		return indices.get(index).data;
+	}
 	public int getLength() { return this.length; }
 }
