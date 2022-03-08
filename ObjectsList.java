@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class ObjectsList {
@@ -37,6 +38,20 @@ public class ObjectsList {
 				traversalNode = traversalNode.next;
 			}
 		}
+	}
+
+	public Object[] getAll() {
+		Object[] array = new Object[this.getLength()];
+		if (head != null) {
+			LinkedNode traversalNode = head;
+			int index = 0;
+			while (traversalNode != null) {
+				array[index] = traversalNode.data;
+				traversalNode = traversalNode.next;
+				index++;
+			}
+		}
+		return array;
 	}
 
 	public Object get(Integer index) {

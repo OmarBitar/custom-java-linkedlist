@@ -11,9 +11,9 @@ public class PlayGround {
 		test.append(22);
 		test.append('a');
 		test.append("hello world");
-		for (int x = 0; x < test.getLength(); x++) {
-			System.out.println(test.get(x));
-		}
+
+
+
 
 
 //		System.out.println(test.peek());
